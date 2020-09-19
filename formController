@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Contact;
+class ContactController extends Controller
+{
+  function formData(Request $request){
+     $email= $request->input('email');
+     $pasWord=$request->input('pasWord');
+      $massege=$request->input('massege');
+
+
+     $post= Contact::insert([
+         'email'=>$email,
+         'password'=>$pasWord,
+         'massege'=>$massege
+      ]);
+      if($post== true){
+         return 1;
+         
+      }else{
+         return 0;
+      }
+  }
+
+ 
+}

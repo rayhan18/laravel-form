@@ -1,0 +1,5 @@
+Route::post('/formData','ContactController@formData');
+
+
+Notes--
+"formData " is url
